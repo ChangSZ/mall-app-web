@@ -68,7 +68,7 @@
 						})
 						return;
 					}
-					window.location.href = API_BASE_URL+"/alipay/webPay?outTradeNo=" + this.orderInfo.orderSn + "&subject=" + this.orderInfo.receiverName + "的商品订单" + "&totalAmount=" + this.orderInfo.totalAmount
+					window.location.href = API_BASE_URL+"/alipay/pay?outTradeNo=" + this.orderInfo.orderSn + "&subject=" + this.orderInfo.receiverName + "的商品订单" + "&totalAmount=" + this.orderInfo.totalAmount
 				}else{
 					payOrderSuccess({
 						orderId: this.orderId,

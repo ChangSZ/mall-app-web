@@ -692,7 +692,8 @@
 					productCollectionDetail({
 						productId: this.product.id
 					}).then(response => {
-						this.favorite = response.data != null;
+						this.favorite = response.data != null && 
+                (Array.isArray(response.data) ? response.data.length > 0 : Object.keys(response.data).length > 0);
 					});
 				}
 			},
