@@ -186,7 +186,7 @@
 			initBrandAttention(){
 				if(this.hasLogin){
 					brandAttentionDetail({brandId:this.brand.id}).then(response=>{
-						this.favoriteStatus = response.data!=null;
+						this.favoriteStatus = response.data!=null && Object.keys(response.data).length > 0;
 					});
 				}
 			},
