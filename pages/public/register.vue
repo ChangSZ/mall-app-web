@@ -4,21 +4,23 @@
 		<view class="back-btn yticon icon-zuojiantou-up" @click="navBack"></view>
 		<view class="right-top-sign"></view>
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
-		<view class="wrapper">
-			<view class="empty">
-				<image src="/static/qrcode_for_macrozheng_258.jpg" mode="aspectFit"></image>
-				<view class="empty-tips">
-					扫描上方二维码<view class="navigator">关注公众号</view>，
-				</view>
-				<view class="empty-tips">
-					回复<view class="navigator">会员</view>获取体验账号。
-				</view>
+		<uni-card class="account-card" title="体验账号">
+		  <view class="account-info">
+			<view class="account-item">
+			  <text class="label">账号：</text>
+			  <text class="value">member</text>
 			</view>
-		</view>
+			<view class="account-item">
+			  <text class="label">密码：</text>
+			  <text class="value">member123</text>
+			</view>
+		  </view>
+		</uni-card>
 	</view>
 </template>
 
 <script>
+	import uniCard from '@dcloudio/uni-ui/lib/uni-card/uni-card.vue';
 	export default {
 		data() {
 			return {}
@@ -30,7 +32,6 @@
 				uni.navigateBack();
 			},
 		},
-
 	}
 </script>
 
@@ -84,7 +85,20 @@
 		background: #fff;
 		padding-bottom: 40upx;
 	}
+	
+	.account-card {
+	  margin: 20rpx 0;
+	}
 
+	.account-info {
+	  padding-top: 10rpx;
+	}
+
+	.account-item {
+	  display: flex;
+	  margin-bottom: 10rpx;
+	}
+	
 	.back-btn {
 		position: absolute;
 		left: 40upx;
